@@ -1,0 +1,4 @@
+rootProject.name = 'sechuran-fox'
+include 'src:main:Events'
+findProject(':src:main:Events')?.name = 'Events'
+
