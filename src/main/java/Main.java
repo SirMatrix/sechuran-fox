@@ -1,6 +1,7 @@
 import Config.Config;
 import Events.MessageListener;
 import Events.ReadyListener;
+import Events.TwitchListener;
 import Handlers.SlashCommandHandler;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
