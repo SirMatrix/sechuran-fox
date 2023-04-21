@@ -1,11 +1,11 @@
 import Config.Config;
 import Events.MessageListener;
 import Events.ReadyListener;
+import Events.TwitchListener;
 import Handlers.SlashCommandHandler;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
-import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 
 import java.util.EnumSet;
@@ -30,6 +30,7 @@ public class Main {
                 .setActivity(Activity.playing("Digging a hole!"))
                 .build();
         jda.awaitReady().addEventListener(new ReadyListener(), new MessageListener(),new SlashCommandHandler(jda, jda.getGuildById("467422168339316754")));
+
 
 
     }
