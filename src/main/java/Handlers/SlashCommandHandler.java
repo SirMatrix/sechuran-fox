@@ -27,6 +27,7 @@ public class SlashCommandHandler extends ListenerAdapter {
     this.globalCommandsData = jda.updateCommands();
     this.guildCommandsData = guild.updateCommands();
 
+
         ClassGraph classGraph = new ClassGraph();
         List<Slash> slashes = new ArrayList<>();
         classGraph.enableClassInfo()

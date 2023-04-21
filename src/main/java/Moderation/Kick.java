@@ -35,7 +35,7 @@ public class Kick implements Slash {
     }
 
         guild.kick(uname).reason(reas).queue(
-                s-> event.reply("Successfully kicked the member:" + uname.getEffectiveName() + "For the reason of: " + reas).queue(),
+                s -> event.reply("Successfully kicked the member:" + uname.getEffectiveName() + "For the reason of: " + reas).queue(),
                 e-> event.reply("Error kicking user form the discord! Error reason: " + e).queue()
         );
 
