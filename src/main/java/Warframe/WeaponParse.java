@@ -18,7 +18,6 @@ import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -47,27 +46,17 @@ public class WeaponParse {
             String description = weaponJson.getString("description");
             String type = weaponJson.getString("type");
             int masteryReq = weaponJson.getInt("masteryReq");
-            JSONObject damageJson = weaponJson.getJSONObject("damage");
-            double[] damage = new double[damageJson.length()];
-            String[] elementTypes = new String[damageJson.length()]; // create a new array to store element types
-            int i = 0;
-            for (String key : damageJson.keySet()) {
-                String[] parts = key.split(" ");
-                elementTypes[i] = parts[0]; // store the element type in the new array
-                damage[i] = damageJson.getDouble(key);
-                i++;
-            }
+            String damage = weaponJson.getJSONObject("damage").toString();
             double criticalChance = weaponJson.getDouble("criticalChance") * 100;
             double criticalMultiplier = weaponJson.getDouble("criticalMultiplier");
             double procChance = weaponJson.getDouble("procChance") * 100;
             double fireRate = weaponJson.getDouble("fireRate");
             int magazineSize = weaponJson.getInt("magazineSize");
             double reloadTime = weaponJson.getDouble("reloadTime");
-            String weaponImage = weaponJson.getString("wikiaThumbnail");
 
             itemData = new ItemData(name, description, type, masteryReq, damage,
                     criticalChance, criticalMultiplier, procChance, fireRate, magazineSize,
-                    reloadTime, weaponImage);
+                    reloadTime);
 
         } catch (Exception e) {
             e.printStackTrace();

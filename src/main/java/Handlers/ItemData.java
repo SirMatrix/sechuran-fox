@@ -5,17 +5,16 @@ public class ItemData {
     private final String description;
     private final String type;
     private final int masteryReq;
-    private final double[] damage;
+    private final String damage;
     private final double criticalChance;
     private final double criticalMultiplier;
     private final double procChance;
     private final double fireRate;
     private final int magazineSize;
     private final double reloadTime;
-    private final String wikiaThumbnail;
 
 
-    public ItemData(String name, String description, String type, int masteryReq, double[] damage, double criticalChance, double criticalMultiplier, double procChance, double fireRate, int magazineSize, double reloadTime, String wikiaThumbnail) {
+    public ItemData(String name, String description, String type, int masteryReq, String damage, double criticalChance, double criticalMultiplier, double procChance, double fireRate, int magazineSize, double reloadTime) {
         this.name = name;
         this.description = description;
         this.type = type;
@@ -27,7 +26,6 @@ public class ItemData {
         this.fireRate = fireRate;
         this.magazineSize = magazineSize;
         this.reloadTime = reloadTime;
-        this.wikiaThumbnail = wikiaThumbnail;
     }
 
     public String getName() {
@@ -46,7 +44,9 @@ public class ItemData {
         return masteryReq;
     }
 
-    public double[] getDamage() {return damage;}
+    public String getDamage() {
+        return damage;
+    }
 
     public double getCriticalChance() {
         return criticalChance;
@@ -72,7 +72,6 @@ public class ItemData {
         return reloadTime;
     }
 
-    public String wikiaThumbnail(){return wikiaThumbnail;}
 
 
     // getters and setters for all fields
