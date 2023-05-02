@@ -12,10 +12,10 @@ import java.awt.*;
 import java.util.Arrays;
 import java.util.List;
 
-public class Warframe implements Slash {
+public class WFWeaponSearch implements Slash {
     private final WeaponParse weaponParse;
 
-    public Warframe() {
+    public WFWeaponSearch() {
         this.weaponParse = new WeaponParse();
     }
     @Override
@@ -54,12 +54,12 @@ public class Warframe implements Slash {
 
     @Override
     public String getName() {
-        return "wfs";
+        return "wfwsearch";
     }
 
     @Override
     public String getDescription() {
-        return "Allows a user to utilize the warframe api to search for items or weapons and more!";
+        return "Allows a user to utilize the warframe api to search for weapons!";
     }
 
     @Override

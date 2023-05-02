@@ -1,7 +1,9 @@
 import Config.Config;
 import Events.MessageListener;
 import Events.ReadyListener;
+import GenericCommands.WFModSearch;
 import Handlers.SlashCommandHandler;
+import Warframe.ModParse;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
@@ -29,8 +31,7 @@ public class Main {
         JDA jda = JDABuilder.createDefault(Config.get("TOKEN"), intents)
                 .setActivity(Activity.playing("Digging a hole!"))
                 .build();
-        jda.awaitReady().addEventListener(new ReadyListener(), new MessageListener(),new SlashCommandHandler(jda, jda.getGuildById("467422168339316754")));
-
+        jda.awaitReady().addEventListener(new ReadyListener(), new MessageListener(),new WFModSearch(),new SlashCommandHandler(jda, jda.getGuildById("467422168339316754")));
 
     }
 
