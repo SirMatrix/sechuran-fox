@@ -8,7 +8,6 @@ import Warframe.ModParse;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
-import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 
 import java.util.EnumSet;
@@ -37,6 +36,7 @@ public class Main {
         TextChannel updateChanel = jda.getTextChannelById("1092180747693084772");
         UpdateNotifier updateNotifier = new UpdateNotifier(jda, updateChanel);
         jda.awaitReady().addEventListener(new ReadyListener(), new MessageListener(),new WFModSearch(),new SlashCommandHandler(jda, jda.getGuildById("467422168339316754")));
+
 
     }
 
