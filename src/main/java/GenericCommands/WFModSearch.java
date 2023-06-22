@@ -56,7 +56,7 @@ public class WFModSearch extends ListenerAdapter implements Slash {
                 .addField("Type", modData.getType(), true)
                 .setThumbnail(modData.getThumbNail());
 
-        Button button = Button.primary("generate_excel" + modName, "Generate Excel Sheet");
+        Button button = Button.primary("generate_excel" + modName, "Generate Drop Sheet");
         List<Button> components = Collections.singletonList(button);
         ActionRow row = ActionRow.of(components);
         event.replyEmbeds(builder.build()).addComponents(row).queue();

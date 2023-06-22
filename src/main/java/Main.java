@@ -1,6 +1,7 @@
 import Config.Config;
 import Events.MessageListener;
 import Events.ReadyListener;
+import Misc.UpdateNotifier;
 import GenericCommands.WFModSearch;
 import Handlers.SlashCommandHandler;
 import Warframe.ModParse;
@@ -30,6 +31,10 @@ public class Main {
         JDA jda = JDABuilder.createDefault(Config.get("TOKEN"), intents)
                 .setActivity(Activity.playing("Digging a hole!"))
                 .build();
+
+
+        TextChannel updateChanel = jda.getTextChannelById("1092180747693084772");
+        UpdateNotifier updateNotifier = new UpdateNotifier(jda, updateChanel);
         jda.awaitReady().addEventListener(new ReadyListener(), new MessageListener(),new WFModSearch(),new SlashCommandHandler(jda, jda.getGuildById("467422168339316754")));
 
 
